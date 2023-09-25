@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Ujjwal Sinha</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Ujjwal Sinha</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                    <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Project</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./Ujjwal_Sinha_photo.jpg" alt="Ujjwal Sinha Profile Picture" srcset="" class="section1_img">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello I'm</p>
+            <h1 class="title">Ujjwal Sinha</h1>
+            <p class="section__text__p2">Full Stack Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('resume-example.pdf')">Download CV</button>
+                <button class="btn btn-color-1" onclick="location.href='#contact'">Contact</button>
+            </div>
+            <div id="socials-container">
+                <img src="data:image/png;base64,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" alt="" srcset="" class="icon" onclick="location.href='https://linkedin.com/'">
+                <img src="https://cdn-icons-png.flaticon.com/256/25/25231.png" alt="" srcset="" class="icon" onclick="location.href='https://github.com/'">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+          <!-- <div class="section__pic-container">
+            <img
+              src="about-pic.png"
+              alt="Profile picture"
+              class="about-pic"
+            />
+          </div> -->
+          <div class="about-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <img
+                  src="experience.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <h3>Experience</h3>
+                <p>3+ years <br />Backend Development</p>
+              </div>
+              <div class="details-container">
+                <img
+                  src="education.png"
+                  alt="Education icon"
+                  class="icon"
+                />
+                <h3>Education</h3>
+                <p>Bachelor of Technology</p>
+              </div>
+            </div>
+            <div class="text-container">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
+                reprehenderit et laborum, rem, dolore eum quod voluptate
+                exercitationem nobis, nihil esse debitis maxime facere minus sint
+                delectus velit in eos quo officiis explicabo deleniti dignissimos.
+                Eligendi illum libero dolorum cum laboriosam corrupti quidem,
+                reiciendis ea magnam? Nulla, impedit fuga!
+              </p>
+            </div>
+          </div>
+        </div>
+        <img
+          src="https://w7.pngwing.com/pngs/175/947/png-transparent-arrow-computer-icons-down-arrow-angle-black-desktop-wallpaper-thumbnail.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#experience'"
+        />
+    </section>
+
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Front End Technologies</h2>
+            <div class="article-container">
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>React JS</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+
+          </div>
+
+          <div class="details-container">
+            <h2 class="experience-sub-title">Back End Technologies</h2>
+            <div class="article-container">
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>Java</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>Spring Boot, MicroService</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>RDBMS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>Git</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+
+              <article>
+                <img src="https://www.freeiconspng.com/thumbs/checkmark-png/black-checkmark-png-4.png" alt="Experience icon" srcset="" class="icon">
+                <div>
+                  <h3>CI/CD</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <img
+          src="https://w7.pngwing.com/pngs/175/947/png-transparent-arrow-computer-icons-down-arrow-angle-black-desktop-wallpaper-thumbnail.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#projects'"
+        />
+    </section>
+
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="" alt="" srcset="" class="project-img">
+            </div>
+            <h2 class="experience-sub-title project-title">Project One</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/'">
+              Github
+              </button>
+              <button class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/'">
+              Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="" alt="" srcset="" class="project-img">
+            </div>
+            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/'">
+              Github
+              </button>
+              <button class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/'">
+              Live Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="" alt="" srcset="" class="project-img">
+            </div>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/'">
+              Github
+              </button>
+              <button class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/'">
+              Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+          src="https://w7.pngwing.com/pngs/175/947/png-transparent-arrow-computer-icons-down-arrow-angle-black-desktop-wallpaper-thumbnail.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#contact'"
+        />
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="https://cdn-icons-png.flaticon.com/512/542/542689.png" alt="" srcset="" class="icon contact-icon">
+          <p><a href="mailTo:examplemail@gmail.com">examplemail@gmail.com</a></p>
+        </div>
+
+        <div class="contact-info-container">
+          <img src="https://www.iconpacks.net/icons/1/free-linkedin-icon-112-thumb.png" alt="" srcset="" class="icon contact-icon">
+          <p><a href="https://linkedin.com">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Ujjwal Sinha. All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
